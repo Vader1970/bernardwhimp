@@ -44,6 +44,11 @@ export const Navbar = (props: NavbarProps) => {
   const isMobile = useMediaQuery("(max-width: 991px)");
   const pathname = usePathname();
 
+  // Close mobile menu when pathname changes
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [pathname]);
+
   useEffect(() => {
     setIsMounted(true);
   }, []);
@@ -203,14 +208,14 @@ const SubMenu = ({
             className='bg-background-primary lg:absolute lg:z-50 lg:border lg:border-border-primary lg:p-2 lg:[--y-close:25%]'
           >
             {navLink.subMenuLinks?.map((subMenuLink, index) => (
-              <a
+              <Link
                 key={index}
                 href={subMenuLink.url}
                 className='block py-3 text-center lg:px-4 lg:py-2 lg:text-left'
                 onClick={handleLinkClick}
               >
                 {subMenuLink.title}
-              </a>
+              </Link>
             ))}
           </motion.nav>
         </AnimatePresence>

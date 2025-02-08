@@ -18,7 +18,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang='en'
       className={`
         ${suisseIntl.black.variable} 
         ${suisseIntl.bold.variable} 
@@ -30,10 +30,10 @@ export default function RootLayout({
       `}
     >
       <body>
-        <div className="min-h-screen flex flex-col">
-          <Navbar />
-          <main>{children}</main>
-        </div>
+        {/* <div > */}
+        <Navbar />
+        <main className='min-h-screen flex flex-col'>{children}</main>
+        {/* </div> */}
       </body>
     </html>
   );
