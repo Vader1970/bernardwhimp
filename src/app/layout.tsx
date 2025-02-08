@@ -30,10 +30,10 @@ export default function RootLayout({
       `}
     >
       <body>
-        {/* <div > */}
-        <Navbar />
-        <main className='min-h-screen flex flex-col'>{children}</main>
-        {/* </div> */}
+        <div className='min-h-screen flex flex-col'>
+          <Navbar />
+          <main className='pt-16 md:pt-18'>{children}</main>
+        </div>
       </body>
     </html>
   );
