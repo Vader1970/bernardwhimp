@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/Button";
 
 import Image from "next/image";
@@ -10,6 +11,7 @@ type ImageProps = {
 type ButtonConfig = {
   title: string;
   variant: "white-bg" | "transparent-bg";
+  href?: string;
 };
 
 type Props = {
@@ -27,6 +29,11 @@ export const Hero = (props: HeroProps) => {
     ...props,
   };
 
+  const handleLearnMore = () => {
+    const layout102Element = document.getElementById("layout102");
+    layout102Element?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id='relume' className='relative px-[5%]'>
       <div className='container'>
@@ -42,11 +49,17 @@ export const Hero = (props: HeroProps) => {
               and securities law.
             </p>
             <div className='mt-6 flex flex-wrap gap-4 md:mt-8'>
-              {buttons.map((button, index) => (
-                <Button key={index} {...button}>
-                  {button.title}
-                </Button>
-              ))}
+              {buttons.map((button, index) =>
+                button.title === "Learn more" ? (
+                  <Button key={index} {...button} onClick={handleLearnMore}>
+                    {button.title}
+                  </Button>
+                ) : (
+                  <Button key={index} {...button} href='/contact'>
+                    {button.title}
+                  </Button>
+                )
+              )}
             </div>
           </div>
         </div>
@@ -60,7 +73,7 @@ export const Hero = (props: HeroProps) => {
           className='object-cover object-[65%_center] md:object-center'
           priority
         />
-        <div className='absolute inset-0 bg-black/30' />
+        <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent' />
       </div>
     </section>
   );
@@ -70,8 +83,8 @@ export const HeroDefaults: Props = {
   tagline: "Professional Stock Picker.  Chance Voight CEO.",
   heading: "BERNARD WHIMP",
   buttons: [
-    { title: "Learn More", variant: "white-bg" },
-    { title: "Get in touch", variant: "transparent-bg" },
+    { title: "Learn more", variant: "white-bg" },
+    { title: "Get in touch", variant: "transparent-bg", href: "#contact" },
   ],
   image: {
     src: "/images/hero-crop.jpg",
