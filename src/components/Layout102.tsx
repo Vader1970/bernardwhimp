@@ -8,7 +8,6 @@ type ImageProps = {
 type SubHeadingProps = {
   title: string;
   description: string;
-  icon: ImageProps;
 };
 
 type Props = {
@@ -38,15 +37,6 @@ export function Layout102(props: Layout102Props) {
             <div className='grid grid-cols-1 gap-6 py-2 sm:grid-cols-2'>
               {subHeadings.map((subHeading, index) => (
                 <article key={index}>
-                  <div className='mb-3 md:mb-4'>
-                    <Image
-                      src={subHeading.icon.src}
-                      alt={subHeading.icon.alt ?? ""}
-                      width={48}
-                      height={48}
-                      className='size-12'
-                    />
-                  </div>
                   <h3 className='mb-3 text-md font-bold leading-[1.4] md:mb-4 md:text-xl'>{subHeading.title}</h3>
                   <p>{subHeading.description}</p>
                 </article>
@@ -54,36 +44,47 @@ export function Layout102(props: Layout102Props) {
             </div>
           </div>
         </div>
-        <Image src={image.src} alt={image.alt ?? ""} width={1280} height={720} className='w-full object-cover' />
+        <div className='relative'>
+          <Image src={image.src} alt={image.alt ?? ""} width={1280} height={720} className='w-full object-cover' />
+          {/* Glass morphism quote on medium devices and up */}
+          <div className='absolute left-[5%] top-1/2 -translate-y-1/2 lg:max-w-[300px] md:max-w-[270px] h-auto rounded-lg bg-white/10 backdrop-blur-md p-8 hidden md:flex flex-col justify-center'>
+            <p className='text-white text-2xl italic font-normal mb-4'>
+              &quot;I am looking to build on the knowledge and experience I have accumulated to create life changing
+              wealth for investors&quot;
+            </p>
+            <p className='text-white'>- Bernard Whimp</p>
+          </div>
+        </div>
+        {/* Quote for small devices */}
+        <div className='bg-white mt-6 md:hidden'>
+          <p className='text-black italic font-normal mb-4 sm:text-2xl'>
+            &quot;I am looking to build on the knowledge and experience I have accumulated to create life changing
+            wealth for investors&quot;
+          </p>
+          <p className='text-black'>- Bernard Whimp</p>
+        </div>
       </div>
     </section>
   );
 }
 
 export const Layout102Defaults: Props = {
-  heading: "Long heading is what you see here in this feature section",
-  description:
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.",
+  heading: `Described by some as "the god of stocks."`,
+  description: `Bernard Whimp is a visionary and an entrepreneur, some would refer to him as "the god of stocks". As an experienced professional stock picker, he is passionate, relentless, and strategic when it comes to the Australian stock market.`,
   image: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image-landscape.svg",
-    alt: "Relume placeholder image",
+    src: "/images/bernard-desk-center.webp",
+    alt: "Bernard sitting at desk",
   },
   subHeadings: [
     {
-      icon: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-        alt: "Relume logo 1",
-      },
-      title: "Subheading one",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      title: "Visionary Leader",
+      description:
+        "Bernard Whimp is building a billion-dollar business in the Australian stock market, establishing New Zealand's first equities hedge fund.",
     },
     {
-      icon: {
-        src: "https://d22po4pjz3o32e.cloudfront.net/relume-icon.svg",
-        alt: "Relume logo 2",
-      },
-      title: "Subheading two",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros.",
+      title: "Inspiring Speaker",
+      description:
+        "Bernard Whimp shares investment insights with shareholders, aiming to convey his deep understanding of the stock market.",
     },
   ],
 };

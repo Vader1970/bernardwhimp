@@ -60,7 +60,7 @@ export const Hero = (props: HeroProps) => {
           className='object-cover object-[65%_center] md:object-center'
           priority
         />
-        <div className='absolute inset-0 bg-black/50' />
+        <div className='absolute inset-0 bg-black/30' />
       </div>
     </section>
   );
