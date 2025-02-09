@@ -10,8 +10,8 @@ export const Button: React.FC<ButtonProps> = ({ variant, children, ...props }) =
 
   const variantStyles = {
     navbar: "bg-black text-white",
-    "white-bg": "bg-white text-black hover:bg-transparent hover:text-white hover:border hover:border-white",
-    "transparent-bg": "bg-transparent border border-white text-white hover:bg-white hover:text-black",
+    "white-bg": "bg-white text-black border border-white",
+    "transparent-bg": "bg-transparent text-white border border-white",
   };
 
   return (
