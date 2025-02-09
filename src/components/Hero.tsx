@@ -73,7 +73,7 @@ export const Hero = (props: HeroProps) => {
           className='object-cover object-[65%_center] md:object-center'
           priority
         />
-        <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent' />
+        <div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent' />
       </div>
     </section>
   );
