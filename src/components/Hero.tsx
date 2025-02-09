@@ -56,7 +56,7 @@ export const Hero = (props: HeroProps) => {
           src={image.src}
           alt={image.alt || "Background image"}
           fill
-          className='object-cover object-[70%_center] md:object-center'
+          className='object-cover object-[65%_center] md:object-center'
           priority
         />
         <div className='absolute inset-0 bg-black/50' />
@@ -73,7 +73,7 @@ export const HeroDefaults: Props = {
     { title: "Get in touch", variant: "transparent-bg" },
   ],
   image: {
-    src: "/images/hero.webp",
+    src: "/images/hero-crop.jpg",
     alt: "Bernard Whimp",
   },
 };
