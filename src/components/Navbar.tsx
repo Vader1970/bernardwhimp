@@ -61,13 +61,6 @@ export const Navbar = (props: NavbarProps) => {
             BERNARD WHIMP
           </Link>
           <div className='flex items-center gap-4 lg:hidden'>
-            <div>
-              {buttons.map((button, index) => (
-                <Link key={index} href={button.href || "/"}>
-                  <Button variant={button.variant}>{button.title}</Button>
-                </Link>
-              ))}
-            </div>
             <button
               className='-mr-2 flex size-12 flex-col items-center justify-center'
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -133,6 +126,13 @@ export const Navbar = (props: NavbarProps) => {
                 </div>
               );
             })}
+            <div className='block pt-4 lg:hidden'>
+              {buttons.map((button, index) => (
+                <Link key={index} href={button.href || "/"}>
+                  <Button variant={button.variant}>{button.title}</Button>
+                </Link>
+              ))}
+            </div>
           </motion.div>
         )}
         <div className='hidden justify-self-end lg:block'>
