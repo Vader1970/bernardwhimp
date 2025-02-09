@@ -26,7 +26,7 @@ export function Layout102(props: Layout102Props) {
   };
 
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
+    <section id='layout102' className='px-[5%] py-16 md:py-24 lg:py-28'>
       <div className='container'>
         <div className='mb-12 grid grid-cols-1 items-start justify-between gap-x-12 gap-y-5 md:mb-18 md:grid-cols-2 md:gap-x-12 md:gap-y-8 lg:mb-20 lg:gap-x-20'>
           <header>
@@ -45,14 +45,21 @@ export function Layout102(props: Layout102Props) {
           </div>
         </div>
         <div className='relative'>
-          <Image src={image.src} alt={image.alt ?? ""} width={1280} height={720} className='w-full object-cover' />
+          <div className='absolute inset-0 bg-black/10 z-10'></div>
+          <Image
+            src={image.src}
+            alt={image.alt ?? ""}
+            width={1280}
+            height={720}
+            className='w-full object-cover relative rounded-lg'
+          />
           {/* Glass morphism quote on medium devices and up */}
           <div className='absolute left-[5%] top-1/2 -translate-y-1/2 lg:max-w-[300px] md:max-w-[270px] h-auto rounded-lg bg-white/10 backdrop-blur-md p-8 hidden md:flex flex-col justify-center'>
             <p className='text-white text-2xl italic font-normal mb-4'>
               &quot;I am looking to build on the knowledge and experience I have accumulated to create life changing
               wealth for investors&quot;
             </p>
-            <p className='text-white'>- Bernard Whimp</p>
+            <p className='text-white italic font-normal mb-4 text-lg'>- Bernard Whimp</p>
           </div>
         </div>
         {/* Quote for small devices */}
@@ -61,7 +68,7 @@ export function Layout102(props: Layout102Props) {
             &quot;I am looking to build on the knowledge and experience I have accumulated to create life changing
             wealth for investors&quot;
           </p>
-          <p className='text-black'>- Bernard Whimp</p>
+          <p className='text-black italic font-normal mb-4 sm:text-2xl'>- Bernard Whimp</p>
         </div>
       </div>
     </section>
