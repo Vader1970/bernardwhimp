@@ -56,6 +56,7 @@ export const Hero = (props: HeroProps) => {
           src={image.src}
           alt={image.alt || "Background image"}
           fill
+          sizes='(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw'
           className='object-cover object-[65%_center] md:object-center'
           priority
         />
