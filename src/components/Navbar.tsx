@@ -57,15 +57,8 @@ export const Navbar = (props: NavbarProps) => {
     <nav className='fixed flex w-full items-center border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%] z-50'>
       <div className='mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4'>
         <div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
-          <Link href={logo.url || "/"} className='text-lg font-extrabold group'>
-            <span className='relative inline-flex overflow-hidden'>
-              <span className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>
-                BERNARD WHIMP
-              </span>
-              <span className='absolute inset-0 translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>
-                BERNARD WHIMP
-              </span>
-            </span>
+          <Link href={logo.url || "/"} className='text-lg font-extrabold'>
+            BERNARD WHIMP
           </Link>
           <div className='flex items-center gap-4 lg:hidden'>
             <div>
