@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { suisseIntl, suisseScreen } from "../fonts";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { Footer4 } from "@/components/Footer4";
 
 export const metadata: Metadata = {
   title: "Bernard Whimp - Professional Stock Picker",
@@ -18,7 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang='en'
+      lang="en"
       className={`
         ${suisseIntl.black.variable} 
         ${suisseIntl.bold.variable} 
@@ -30,9 +31,10 @@ export default function RootLayout({
       `}
     >
       <body>
-        <div className='min-h-screen flex flex-col'>
+        <div className="min-h-screen flex flex-col">
           <Navbar />
-          <main className='pt-16 md:pt-18'>{children}</main>
+          <main className="pt-16 md:pt-18">{children}</main>
+          <Footer4 />
         </div>
       </body>
     </html>

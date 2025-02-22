@@ -1,3 +1,5 @@
+//Component Library Content1
+// Chance Voight CEO
 import Image from "next/image";
 
 type ImageProps = {
@@ -11,7 +13,8 @@ type Props = {
   children: React.ReactNode;
 };
 
-export type Content1Props = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
+export type Content1Props = React.ComponentPropsWithoutRef<"section"> &
+  Partial<Props>;
 
 export const Content1 = (props: Content1Props) => {
   const { heading, children, image } = {
@@ -19,21 +22,23 @@ export const Content1 = (props: Content1Props) => {
     ...props,
   };
   return (
-    <section id='relume' className='px-[5%] py-16 md:py-24 lg:py-28'>
-      <div className='container'>
-        <div className='grid grid-cols-1 items-start gap-y-12 md:grid-cols-2 md:gap-x-12 lg:gap-x-20'>
+    <section id="relume" className="cvi-container">
+      <div>
+        <div className="grid grid-cols-1 items-start gap-y-12 xl:grid-cols-2 md:gap-x-12 lg:gap-x-20">
           <div>
-            <h2 className='rb-5 mb-5 text-5xl font-bold md:mb-6 md:text-7xl lg:text-8xl'>{heading}</h2>
-            <div className='prose'>{children}</div>
+            <h2 className="mb-5 text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
+              {heading}
+            </h2>
+            <div className="w-[100px] h-[2px] bg-black mb-5"></div>
+            <div className="prose">{children}</div>
           </div>
           <div>
             <Image
               src={image.src}
               width={600}
               height={600}
-              className='w-full object-cover'
+              className="w-full object-cover rounded-lg"
               alt={image.alt || "Image"}
-              layout='responsive'
             />
           </div>
         </div>
@@ -43,29 +48,36 @@ export const Content1 = (props: Content1Props) => {
 };
 
 export const Content1Defaults: Props = {
-  heading: "Short heading goes here",
+  heading: "Chance Voight CEO",
   children: (
     <div>
-      <p>
-        Morbi sed imperdiet in ipsum, adipiscing elit dui lectus. Tellus id scelerisque est ultricies ultricies. Duis
-        est sit sed leo nisl, blandit elit sagittis. Quisque tristique consequat quam sed. Nisl at scelerisque amet
-        nulla purus habitasse.
+      <p className="mb-6 md:mb-8 md:text-md">
+        Chance Voight was established in 2018 with the ambition to develop a
+        profitable New Zealand hedge fund. Prior to his re-orientation towards
+        the share market over a decade ago, Bernard accumulated extensive
+        experience as a financier and investor in real estate transactions as
+        well as building financial and investment-related businesses. Chance
+        Voight was founded as a result of Bernard&apos;s cumulative experience
+        and an intensive decade of experience as a full-time professional share
+        investor in the Australian stock market (ASX).
       </p>
-      <p>
-        Nunc sed faucibus bibendum feugiat sed interdum. Ipsum egestas condimentum mi massa. In tincidunt pharetra
-        consectetur sed duis facilisis metus. Etiam egestas in nec sed et. Quis lobortis at sit dictum eget nibh tortor
-        commodo cursus.
+      <p className="mb-6 md:mb-8 md:text-md">
+        Currently several years into its development, Chance Voight has
+        established itself as a trusted institution and has experienced a steep
+        upward trajectory towards its billion-dollar investment business
+        ambitions.
       </p>
-      <p>
-        Odio felis sagittis, morbi feugiat tortor vitae feugiat fusce aliquet. Nam elementum urna nisi aliquet erat
-        dolor enim. Ornare id morbi eget ipsum. Aliquam senectus neque ut id eget consectetur dictum. Donec posuere
-        pharetra odio consequat scelerisque et, nunc tortor. Nulla adipiscing erat a erat. Condimentum lorem posuere
-        gravida enim posuere cursus diam.
+      <p className="mb-6 md:mb-8 md:text-md">
+        In addition to the Chance Voight success, Bernard is also possibly one
+        of the most explanatory speakers on the stock market in New Zealand
+        today. Those that have heard him speak at one of his seminars have been
+        fascinated by the way he thinks about the stock market and his deep
+        value style.
       </p>
     </div>
   ),
   image: {
-    src: "https://d22po4pjz3o32e.cloudfront.net/placeholder-image.svg",
-    alt: "Relume placeholder image",
+    src: "/images/bernard-black-coat.webp",
+    alt: "Bernard standing in a black suit",
   },
 };
