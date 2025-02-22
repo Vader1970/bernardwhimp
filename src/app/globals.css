@@ -8,6 +8,10 @@
   margin: 0;
 }
 
+.navbar-font {
+  font-family: var(--font-suisse-intl-bold);
+}
+
 h1 {
   font-family: var(--font-suisse-intl-bold);
 }
@@ -19,8 +23,15 @@ h2 {
 
 p {
   font-family: var(--font-suisse-screen-regular);
+  color: #374151;
 }
 
 a {
   font-family: var(--font-suisse-screen-regular);
+}
+
+@layer components {
+  .cvi-container {
+    @apply px-4 py-8 md:px-12 md:py-12 lg:px-8 lg:py-16 xl:max-w-[1700px] xl:mx-auto xl:py-24;
+  }
 }

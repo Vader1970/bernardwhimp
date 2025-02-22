@@ -1,6 +1,6 @@
 import React from "react";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "navbar" | "white-bg" | "transparent-bg";
   href?: string;
 }
@@ -17,10 +17,10 @@ export const Button: React.FC<ButtonProps> = ({ variant, children, href, ...prop
 
   const content = (
     <span className='relative inline-flex overflow-hidden'>
-      <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>
+      <div className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-20'>
         {children}
       </div>
-      <div className='absolute inset-0 translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>
+      <div className='absolute inset-0 translate-y-[164%] skew-y-20 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>
         {children}
       </div>
     </span>
