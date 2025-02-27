@@ -1,53 +1,10 @@
 //Component Library Footer4
-
-import { FaXTwitter } from "react-icons/fa6";
-import {
-  BiLogoFacebookCircle,
-  BiLogoInstagram,
-  BiLogoLinkedinSquare,
-  BiLogoYoutube,
-} from "react-icons/bi";
 import Link from "next/link";
+import { FooterProps, FooterDefaults } from "../constants/types/footer";
 
-interface ImageProps {
-  url?: string;
-  src: string;
-  alt?: string;
-}
-
-interface Links {
-  title: string;
-  url: string;
-}
-
-interface ColumnLinks {
-  links: Links[];
-}
-
-interface SocialMediaLinks {
-  url: string;
-  icon: React.ReactNode;
-}
-
-interface FooterLink {
-  title: string;
-  url: string;
-}
-
-interface Props {
-  logo: ImageProps;
-  columnLinks: ColumnLinks[];
-  socialMediaLinks: SocialMediaLinks[];
-  footerText: string;
-  footerLinks: FooterLink[];
-}
-
-export type Footer4Props = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
-
-export const Footer4 = (props: Footer4Props) => {
+export const Footer = (props: FooterProps) => {
   const { footerText, columnLinks, footerLinks, socialMediaLinks } = {
-    ...Footer4Defaults,
+    ...FooterDefaults,
     ...props,
   };
   return (
@@ -101,6 +58,8 @@ export const Footer4 = (props: Footer4Props) => {
                   href={link.url}
                   className="hover:text-gray-300"
                   aria-label={`Visit our ${ariaLabel} page`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   {link.icon}
                 </a>
@@ -125,50 +84,4 @@ export const Footer4 = (props: Footer4Props) => {
       </div>
     </footer>
   );
-};
-
-export const Footer4Defaults: Props = {
-  logo: {
-    url: "#",
-    src: "https://d22po4pjz3o32e.cloudfront.net/logo-image.svg",
-    alt: "Logo image",
-  },
-  columnLinks: [
-    {
-      links: [
-        { title: "Home", url: "/" },
-        { title: "About", url: "/about" },
-        { title: "Chance Voight", url: "/chance-voight" },
-        { title: "Media", url: "/media" },
-        { title: "Contact", url: "/contact" },
-      ],
-    },
-  ],
-  socialMediaLinks: [
-    {
-      url: "https://www.facebook.com/people/Bernard-Whimp/pfbid02yaQKJVAzd1SGKCx5tFB9fD7P79tcUkgrShGdTJJGPuE5YpAMTwrahtqzg7F4WRWal/",
-      icon: <BiLogoFacebookCircle className="size-6" />,
-    },
-    {
-      url: "https://www.instagram.com/bernardwhimp/",
-      icon: <BiLogoInstagram className="size-6" />,
-    },
-    {
-      url: "https://x.com/i/flow/login?redirect_after_login=%2FBernard_Whimp",
-      icon: <FaXTwitter className="size-6 p-0.5" />,
-    },
-    {
-      url: "https://www.linkedin.com/in/bernard-whimp-a77872255/?originalSubdomain=nz",
-      icon: <BiLogoLinkedinSquare className="size-6" />,
-    },
-    {
-      url: "https://www.youtube.com/@bernardwhimp",
-      icon: <BiLogoYoutube className="size-6" />,
-    },
-  ],
-  footerText: "© 2025 Chance Voight Investment Partners Ltd.",
-  footerLinks: [
-    { title: "Privacy Policy", url: "#" },
-    { title: "Cookies Settings", url: "#" },
-  ],
 };
