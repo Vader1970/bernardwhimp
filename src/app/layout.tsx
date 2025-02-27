@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { suisseIntl, suisseScreen } from "../fonts";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
-import { Footer4 } from "@/components/Footer4";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Bernard Whimp - Professional Stock Picker",
@@ -34,7 +34,7 @@ export default function RootLayout({
         <div className="min-h-screen flex flex-col">
           <Navbar />
           <main className="pt-16 md:pt-18">{children}</main>
-          <Footer4 />
+          <Footer />
         </div>
       </body>
     </html>

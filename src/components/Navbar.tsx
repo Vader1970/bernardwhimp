@@ -7,32 +7,53 @@ import { Button } from "./Button";
 import { useMediaQuery } from "@relume_io/relume-ui";
 import { AnimatePresence, motion } from "framer-motion";
 import { RxChevronDown } from "react-icons/rx";
+import { NavLink, Props, NavbarDefaults } from "../constants/types/navbar";
 
-type ImageProps = {
-  url?: string;
-  alt?: string;
+// Define animation variants for the mobile menu button lines
+const topLineVariants = {
+  open: {
+    translateY: 8,
+    transition: { delay: 0.1 },
+  },
+  closed: {
+    translateY: 0,
+    rotate: 0,
+    transition: { duration: 0.2 },
+  },
+  rotatePhase: {
+    rotate: -45,
+    transition: { delay: 0.2 },
+  },
 };
 
-type NavLink = {
-  url: string;
-  title: string;
-  subMenuLinks?: NavLink[];
+const middleLineVariants = {
+  open: {
+    width: 0,
+    transition: { duration: 0.1 },
+  },
+  closed: {
+    width: "1.5rem",
+    transition: { delay: 0.3, duration: 0.2 },
+  },
 };
 
-type ButtonConfig = {
-  title: string;
-  variant: "navbar" | "white-bg" | "transparent-bg";
-  href: string;
+const bottomLineVariants = {
+  open: {
+    translateY: -8,
+    transition: { delay: 0.1 },
+  },
+  closed: {
+    translateY: 0,
+    rotate: 0,
+    transition: { duration: 0.2 },
+  },
+  rotatePhase: {
+    rotate: 45,
+    transition: { delay: 0.2 },
+  },
 };
 
-type Props = {
-  logo: ImageProps;
-  navLinks: NavLink[];
-  buttons: ButtonConfig[];
-};
-
-export type NavbarProps = React.ComponentPropsWithoutRef<"section"> &
-  Partial<Props>;
+export type NavbarProps = React.ComponentPropsWithoutRef<"section"> & Partial<Props>;
 
 export const Navbar = (props: NavbarProps) => {
   const { logo, navLinks, buttons } = {
@@ -55,34 +76,31 @@ export const Navbar = (props: NavbarProps) => {
   }, []);
 
   return (
-    <nav className="fixed flex w-full items-center border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%] z-50">
-      <div className="mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4">
-        <div className="flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0">
-          <Link
-            href={logo.url || "/"}
-            className="text-2xl xl:text-[24px] lg:text-[20px] font-extrabold navbar-font"
-          >
+    <nav className='fixed flex w-full items-center border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%] z-50'>
+      <div className='mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4'>
+        <div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
+          <Link href={logo.url || "/"} className='text-2xl xl:text-[24px] lg:text-[20px] font-extrabold navbar-font'>
             BERNARD WHIMP
           </Link>
 
-          <div className="flex items-center gap-4 lg:hidden">
+          <div className='flex items-center gap-4 lg:hidden'>
             <button
-              className="-mr-2 flex size-12 flex-col items-center justify-center"
+              className='-mr-2 flex size-12 flex-col items-center justify-center'
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              aria-label="Toggle mobile menu"
+              aria-label='Toggle mobile menu'
             >
               <motion.span
-                className="my-[3px] h-0.5 w-6 bg-black"
+                className='my-[3px] h-0.5 w-6 bg-black'
                 animate={isMobileMenuOpen ? ["open", "rotatePhase"] : "closed"}
                 variants={topLineVariants}
               />
               <motion.span
-                className="my-[3px] h-0.5 w-6 bg-black"
+                className='my-[3px] h-0.5 w-6 bg-black'
                 animate={isMobileMenuOpen ? "open" : "closed"}
                 variants={middleLineVariants}
               />
               <motion.span
-                className="my-[3px] h-0.5 w-6 bg-black"
+                className='my-[3px] h-0.5 w-6 bg-black'
                 animate={isMobileMenuOpen ? ["open", "rotatePhase"] : "closed"}
                 variants={bottomLineVariants}
               />
@@ -100,18 +118,15 @@ export const Navbar = (props: NavbarProps) => {
               },
             }}
             animate={isMobileMenuOpen || !isMobile ? "open" : "close"}
-            initial="close"
-            exit="close"
+            initial='close'
+            exit='close'
             transition={{ duration: 0.4 }}
-            className="overflow-hidden px-[5%] text-center lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]"
+            className='overflow-hidden px-[5%] text-center lg:flex lg:items-center lg:justify-center lg:px-0 lg:[--height-closed:auto] lg:[--height-open:auto]'
           >
             {navLinks.map((navLink, index) => {
               const isActive = pathname === navLink.url;
               return (
-                <div
-                  key={index}
-                  className="first:pt-4 lg:first:pt-0 group relative"
-                >
+                <div key={index} className='first:pt-4 lg:first:pt-0 group relative'>
                   <Link
                     href={navLink.url || "/"}
                     className={`py-3 lg:py-0 text-md lg:px-4 lg:text-base relative overflow-hidden flex items-center justify-center ${
@@ -119,26 +134,22 @@ export const Navbar = (props: NavbarProps) => {
                     }`}
                     onClick={() => isMobile && setIsMobileMenuOpen(false)}
                   >
-                    <span className="relative inline-flex overflow-hidden">
-                      <span className="translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12">
+                    <span className='relative inline-flex overflow-hidden'>
+                      <span className='translate-y-0 skew-y-0 transition duration-500 group-hover:translate-y-[-160%] group-hover:skew-y-12'>
                         {navLink.title}
                       </span>
-                      <span className="absolute inset-0 translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
+                      <span className='absolute inset-0 translate-y-[164%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0'>
                         {navLink.title}
                       </span>
                     </span>
                   </Link>
                   {navLink.subMenuLinks && (
-                    <SubMenu
-                      navLink={navLink}
-                      isMobile={isMobile}
-                      setIsMobileMenuOpen={setIsMobileMenuOpen}
-                    />
+                    <SubMenu navLink={navLink} isMobile={isMobile} setIsMobileMenuOpen={setIsMobileMenuOpen} />
                   )}
                 </div>
               );
             })}
-            <div className="block pt-4 lg:hidden">
+            <div className='block pt-4 lg:hidden'>
               {buttons.map((button, index) => (
                 <Link key={index} href={button.href || "/"}>
                   <Button variant={button.variant}>{button.title}</Button>
@@ -147,7 +158,7 @@ export const Navbar = (props: NavbarProps) => {
             </div>
           </motion.div>
         )}
-        <div className="hidden justify-self-end lg:block">
+        <div className='hidden justify-self-end lg:block'>
           {buttons.map((button, index) => (
             <Link key={index} href={button.href || "/"}>
               <Button variant={button.variant}>{button.title}</Button>
@@ -183,7 +194,7 @@ const SubMenu = ({
       onMouseLeave={() => !isMobile && setIsDropdownOpen(false)}
     >
       <button
-        className="flex w-full items-center justify-center gap-4 py-3 text-center text-md lg:w-auto lg:flex-none lg:justify-start lg:gap-2 lg:px-4 lg:py-2 lg:text-base"
+        className='flex w-full items-center justify-center gap-4 py-3 text-center text-md lg:w-auto lg:flex-none lg:justify-start lg:gap-2 lg:px-4 lg:py-2 lg:text-base'
         onClick={() => setIsDropdownOpen((prev) => !prev)}
       >
         <span>{navLink.title}</span>
@@ -202,8 +213,8 @@ const SubMenu = ({
         <AnimatePresence>
           <motion.nav
             animate={isDropdownOpen ? "open" : "close"}
-            initial="close"
-            exit="close"
+            initial='close'
+            exit='close'
             variants={{
               open: {
                 visibility: "visible",
@@ -217,13 +228,13 @@ const SubMenu = ({
               },
             }}
             transition={{ duration: 0.2 }}
-            className="bg-background-primary lg:absolute lg:z-50 lg:border lg:border-border-primary lg:p-2 lg:[--y-close:25%]"
+            className='bg-background-primary lg:absolute lg:z-50 lg:border lg:border-border-primary lg:p-2 lg:[--y-close:25%]'
           >
             {navLink.subMenuLinks?.map((subMenuLink, index) => (
               <Link
                 key={index}
                 href={subMenuLink.url}
-                className="block py-3 text-center lg:px-4 lg:py-2 lg:text-left"
+                className='block py-3 text-center lg:px-4 lg:py-2 lg:text-left'
                 onClick={handleLinkClick}
               >
                 {subMenuLink.title}
@@ -234,67 +245,4 @@ const SubMenu = ({
       )}
     </nav>
   );
-};
-
-export const NavbarDefaults: Props = {
-  logo: {
-    url: "/",
-    alt: "Logo image",
-  },
-  navLinks: [
-    { title: "Home", url: "/" },
-    { title: "About", url: "/about" },
-    { title: "Chance Voight", url: "/chance-voight" },
-    { title: "Media", url: "/media" },
-  ],
-  buttons: [
-    {
-      title: "Get in touch",
-      variant: "navbar",
-      href: "/contact",
-    },
-  ],
-};
-
-const topLineVariants = {
-  open: {
-    translateY: 8,
-    transition: { delay: 0.1 },
-  },
-  rotatePhase: {
-    rotate: -45,
-    transition: { delay: 0.2 },
-  },
-  closed: {
-    translateY: 0,
-    rotate: 0,
-    transition: { duration: 0.2 },
-  },
-};
-
-const middleLineVariants = {
-  open: {
-    width: 0,
-    transition: { duration: 0.1 },
-  },
-  closed: {
-    width: "1.5rem",
-    transition: { delay: 0.3, duration: 0.2 },
-  },
-};
-
-const bottomLineVariants = {
-  open: {
-    translateY: -8,
-    transition: { delay: 0.1 },
-  },
-  rotatePhase: {
-    rotate: 45,
-    transition: { delay: 0.2 },
-  },
-  closed: {
-    translateY: 0,
-    rotate: 0,
-    transition: { duration: 0.2 },
-  },
 };
