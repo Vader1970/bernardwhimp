@@ -26,10 +26,8 @@ export const MoreAboutBernard = (props: MoreAboutBernardProps) => {
       animate={{ opacity: isVisible ? 1 : 0, translateY: isVisible ? 0 : 20 }}
       transition={{ duration: 0.5 }}
     >
-      <h2 className="mb-8 text-4xl font-bold leading-[1.2] md:text-5xl lg:text-6xl">
-        {heading}
-      </h2>
-      <p className="mb-4 text-base text-black">{description}</p>
+      <h2 className="heading-2">{heading}</h2>
+      <p className="mb-4 text-base">{description}</p>
       <p className="text-base text-black font-semibold">{blockquote}</p>
       <div className="mt-6 flex flex-wrap justify-center items-center gap-4 md:mt-12">
         <Button

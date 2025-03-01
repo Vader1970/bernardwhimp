@@ -190,13 +190,13 @@ module.exports = {
               h2: {
                 marginBottom: theme("spacing.4"),
                 marginTop: theme("spacing.6"),
-                fontSize: "2.25rem",
+                fontSize: "3rem",
                 lineHeight: "1.2",
               },
               h3: {
                 marginTop: theme("spacing.6"),
                 marginBottom: theme("spacing.6"),
-                fontSize: "2rem",
+                fontSize: "1.125rem",
                 lineHeight: "1.2",
               },
               h4: {
@@ -226,7 +226,7 @@ module.exports = {
                 paddingRight: theme("spacing.5"),
                 paddingTop: theme("spacing.3"),
                 paddingBottom: theme("spacing.3"),
-                fontSize: "1.25rem",
+                fontSize: "1.125rem",
                 fontWeight: theme("fontWeight.normal"),
                 lineHeight: "1.5",
               },

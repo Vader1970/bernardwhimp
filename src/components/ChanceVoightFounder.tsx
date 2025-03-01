@@ -35,10 +35,8 @@ export const ChanceVoightFounder = (
         <div>
           <div className="grid grid-cols-1 gap-y-12 xl:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
             <div className="order-1">
-              <h2 className="mb-2 text-4xl font-bold leading-[1.2] md:text-5xl lg:text-6xl">
-                {heading}
-              </h2>
-              <div className="w-[100px] h-[2px] bg-black mb-8"></div>
+              <h2 className="heading-2">{heading}</h2>
+              <div className="line"></div>
               {paragraphs.map((paragraph, index) => (
                 <p key={index} className="mb-4 text-base">
                   {paragraph}
@@ -70,7 +68,7 @@ export const ChanceVoightFounder = (
           </div>
         </div>
       </motion.section>
-      <hr className="border-t border-gray-200" />
+      <hr className="section-line" />
     </>
   );
 };

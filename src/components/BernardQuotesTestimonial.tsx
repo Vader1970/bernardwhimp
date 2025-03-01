@@ -108,7 +108,7 @@ export const BernardQuotesTestimonial = (
           </Carousel>
         </div>
       </motion.section>
-      <hr className="border-t border-gray-200" />
+      <hr className="section-line" />
     </>
   );
 };
