@@ -44,10 +44,8 @@ export const WhoIsBernard = ({
             </div>
             <div className="flex flex-col">
               <div>
-                <h2 className="mb-2 text-4xl font-bold leading-[1.2] md:text-5xl lg:text-6xl">
-                  {heading}
-                </h2>
-                <div className="w-[100px] h-[2px] bg-black mb-8"></div>
+                <h2 className="heading-2">{heading}</h2>
+                <div className="line"></div>
               </div>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
                 {subHeadings.map((subHeading, index) => {
@@ -55,13 +53,11 @@ export const WhoIsBernard = ({
                   return (
                     <div
                       key={index}
-                      className="flex flex-col items-start border border-black/10 rounded-lg p-4 shadow-large transition-transform transform hover:scale-105 hover:shadow-xl"
+                      className="flex flex-col min-h-[222px] items-start border border-black/10 rounded-lg p-4 shadow-large transition-transform transform hover:scale-105 hover:shadow-xl"
                     >
                       <Icon className="w-9 h-9 text-[#ADB5BD] rounded-md mb-2" />
-                      <div className="text-left">
-                        <h3 className="mb-4 text-xl font-bold leading-[1.4]">
-                          {subHeading.title}
-                        </h3>
+                      <div className="flex-grow text-left">
+                        <h3 className="heading-3">{subHeading.title}</h3>
                         <p className="text-base">{subHeading.description}</p>
                       </div>
                     </div>
@@ -85,7 +81,7 @@ export const WhoIsBernard = ({
           </div>
         </div>
       </motion.section>
-      <hr className="border-t border-gray-200" />
+      <hr className="section-line" />
     </>
   );
 };

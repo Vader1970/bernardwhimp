@@ -28,10 +28,8 @@ export const GodOfStocks = (props: GodOfStocksComponentProps) => {
     >
       <div>
         <div className="mx-auto w-full">
-          <h2 className="mb-2 text-4xl font-bold leading-[1.2] md:text-5xl lg:text-6xl">
-            {heading}
-          </h2>
-          <div className="w-[100px] h-[2px] bg-black mb-8"></div>
+          <h2 className="heading-2">{heading}</h2>
+          <div className="line"></div>
           <div className="prose max-w-none">{children}</div>
         </div>
       </div>

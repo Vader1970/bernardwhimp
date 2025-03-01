@@ -65,7 +65,7 @@ export const BernardDocumentary = (props: BernardDocumentaryProps) => {
           </div>
         </section>
       </motion.div>
-      <hr className="border-t border-gray-200" />
+      <hr className="section-line" />
     </>
   );
 };

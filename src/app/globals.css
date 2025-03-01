@@ -18,7 +18,10 @@ h1 {
 
 h2 {
   font-family: var(--font-suisse-intl-bold);
-  font-size: large;
+}
+
+h3 {
+  font-family: var(--font-suisse-intl-bold);
 }
 
 p {
@@ -30,8 +33,53 @@ a {
   font-family: var(--font-suisse-screen-regular);
 }
 
+blockquote {
+  font-family: var(--font-suisse-screen-regular);
+  color: #374151;
+}
+
 @layer components {
   .cvi-container {
     @apply px-4 py-8 md:px-12 md:py-12 lg:px-8 lg:py-16 xl:max-w-[1700px] xl:mx-auto xl:py-24;
+  }
+
+  .hero-wrapper {
+    @apply flex h-full flex-col justify-end pb-8 md:pb-0 lg:justify-start lg:flex-row lg:items-center;
+  }
+
+  .hero-content-wrapper {
+    @apply max-w-md pb-16 md:pb-12 lg:pb-0;
+  }
+
+  .hero-tagline {
+    @apply mb-3 font-normal text-text-alternative md:mb-4;
+  }
+
+  .hero-heading {
+    @apply mb-5 text-6xl font-bold text-text-alternative md:mb-6 md:text-9xl lg:text-10xl;
+  }
+
+  .hero-description {
+    @apply text-white md:text-md;
+  }
+
+  .hero-buttons-wrapper {
+    @apply mt-6 flex flex-wrap gap-4 md:mt-8;
+  }
+
+  .heading-2 {
+    @apply mb-2 text-4xl font-bold leading-[1.2] md:text-5xl lg:text-6xl;
+  }
+
+  .heading-3 {
+    @apply mb-4 text-md font-bold leading-[1.4];
+  }
+
+  .line {
+    @apply w-[100px] h-[2px] bg-black mb-8;
+  }
+
+  .section-line {
+    @apply border-t border-gray-200;
   }
 }

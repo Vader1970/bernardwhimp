@@ -27,7 +27,7 @@ export const HeroDefaults: Record<string, Props> = {
       { title: "Get in touch", variant: "transparent-bg", href: "#contact" },
     ],
     image: {
-      src: "/images/hero.webp",
+      src: "/images/hero2.webp",
       alt: "Bernard Whimp",
     },
   },
@@ -61,9 +61,7 @@ export const HeroDefaults: Record<string, Props> = {
   contact: {
     tagline: "Get in Touch",
     heading: "CONTACT US",
-    buttons: [
-      { title: "Send a Message", variant: "white-bg", href: "#contact-form" },
-    ],
+    buttons: [{ title: "Send a Message", variant: "white-bg", href: "#contact-form" }],
     image: {
       src: "/images/hero.webp",
       alt: "Contact Us",
