@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { suisseIntl, suisseScreen } from "../fonts";
+import { inter, playfair } from "../fonts";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -21,22 +21,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`
-        ${suisseIntl.black.variable} 
-        ${suisseIntl.bold.variable} 
-        ${suisseIntl.semiBold.variable}
-        ${suisseScreen.light.variable}
-        ${suisseScreen.medium.variable}
-        ${suisseScreen.regular.variable}
-        ${suisseScreen.thin.variable}
-      `}
-    >
+    <html lang='en' className={`${inter.variable} ${playfair.variable}`}>
       <body>
-        <div className="min-h-screen flex flex-col">
+        <div className='min-h-screen flex flex-col'>
           <Navbar />
-          <main className="pt-16 md:pt-18">{children}</main>
+          <main className='pt-16 md:pt-18'>{children}</main>
           <Footer />
         </div>
       </body>

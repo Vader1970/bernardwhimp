@@ -24,21 +24,23 @@ export const ChanceVoightFounder = (
 
   return (
     <>
-      <motion.section
-        ref={elementRef}
-        id="layout192"
-        className="cvi-container"
-        initial={{ opacity: 0, translateY: 20 }}
-        animate={{ opacity: isVisible ? 1 : 0, translateY: isVisible ? 0 : 20 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div>
-          <div className="grid grid-cols-1 gap-y-12 xl:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20">
+      <section id="layout192" className="w-screen bg-[#131a24]">
+        <div className="cvi-container">
+          <motion.div
+            ref={elementRef}
+            initial={{ opacity: 0, translateY: 20 }}
+            animate={{
+              opacity: isVisible ? 1 : 0,
+              translateY: isVisible ? 0 : 20,
+            }}
+            transition={{ duration: 1.5 }}
+            className="grid grid-cols-1 gap-y-12 xl:grid-cols-2 md:items-center md:gap-x-12 lg:gap-x-20"
+          >
             <div className="order-1">
-              <h2 className="heading-2">{heading}</h2>
-              <div className="line"></div>
+              <h2 className="heading-2 text-white">{heading}</h2>
+              <div className="line bg-white"></div>
               {paragraphs.map((paragraph, index) => (
-                <p key={index} className="mb-4 text-base">
+                <p key={index} className="mb-4 text-base text-white">
                   {paragraph}
                 </p>
               ))}
@@ -64,10 +66,16 @@ export const ChanceVoightFounder = (
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover rounded-lg shadow-large"
               />
+              <div className="absolute -bottom-6 -right-6 bg-[#d5962b] text-[#141a23] p-4 rounded-lg">
+                <p className="text-xl font-semibold">
+                  The Chance Voight Building
+                </p>
+                <p className="text-sm">29 High Street, Rangiora</p>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </motion.section>
+      </section>
       <hr className="section-line" />
     </>
   );

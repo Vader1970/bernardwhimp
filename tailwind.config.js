@@ -11,13 +11,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        "suisse-intl-black": ["var(--font-suisse-intl-black)"],
-        "suisse-intl-bold": ["var(--font-suisse-intl-bold)"],
-        "suisse-intl-semibold": ["var(--font-suisse-intl-semibold)"],
-        "suisse-screen-light": ["var(--font-suisse-screen-light)"],
-        "suisse-screen-medium": ["var(--font-suisse-screen-medium)"],
-        "suisse-screen-regular": ["var(--font-suisse-screen-regular)"],
-        "suisse-screen-thin": ["var(--font-suisse-screen-thin)"],
+        sans: ["var(--font-inter)"],
+        heading: ["var(--font-playfair)"],
       },
     },
     screens: {
@@ -52,12 +47,9 @@ module.exports = {
     boxShadow: {
       xxsmall: "0px 1px 2px rgba(0, 0, 0, 0.05)",
       xsmall: "0px 1px 3px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.06)",
-      small:
-        "0px 4px 8px -2px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.06)",
-      medium:
-        "0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03)",
-      large:
-        "0px 20px 24px -4px rgba(0, 0, 0, 0.08), 0px 8px 8px -4px rgba(0, 0, 0, 0.03)",
+      small: "0px 4px 8px -2px rgba(0, 0, 0, 0.1), 0px 2px 4px -2px rgba(0, 0, 0, 0.06)",
+      medium: "0px 12px 16px -4px rgba(0, 0, 0, 0.08), 0px 4px 6px -2px rgba(0, 0, 0, 0.03)",
+      large: "0px 20px 24px -4px rgba(0, 0, 0, 0.08), 0px 8px 8px -4px rgba(0, 0, 0, 0.03)",
       xlarge: "0px 24px 48px -12px rgba(0, 0, 0, 0.18)",
       xxlarge: "0px 32px 64px -12px rgba(0, 0, 0, 0.14)",
     },
@@ -121,6 +113,35 @@ module.exports = {
           darkBlue: "#40485b",
           darkGrey: "#1F2937",
           lightBlack: "#161824",
+        },
+        navy: {
+          50: "#f0f2f7",
+          100: "#d9dfe8",
+          200: "#b8c2d6",
+          300: "#92a2c0",
+          400: "#7286ad",
+          500: "#596d9a",
+          600: "#47587b",
+          700: "#36445e",
+          800: "#252f41",
+          900: "#141a23",
+          950: "#0a0d12",
+        },
+        gold: {
+          50: "#fbf8ed",
+          100: "#f6ecce",
+          200: "#eeda9f",
+          300: "#e5c467",
+          400: "#dfb342",
+          500: "#d59b2b",
+          600: "#be7c21",
+          700: "#9c5b1e",
+          800: "#81491f",
+          900: "#6c3d1e",
+          950: "#3d2010",
+        },
+        gray: {
+          300: "#D1D5DB",
         },
         neutral: {
           DEFAULT: "#666666",

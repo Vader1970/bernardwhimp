@@ -9,33 +9,40 @@
 }
 
 .navbar-font {
-  font-family: var(--font-suisse-intl-bold);
+  font-family: var(--font-playfair);
 }
 
 h1 {
-  font-family: var(--font-suisse-intl-bold);
+  font-family: var(--font-playfair);
 }
 
 h2 {
-  font-family: var(--font-suisse-intl-bold);
+  font-family: var(--font-playfair);
 }
 
 h3 {
-  font-family: var(--font-suisse-intl-bold);
+  font-family: var(--font-playfair);
 }
 
 p {
-  font-family: var(--font-suisse-screen-regular);
-  color: #374151;
+  font-family: var(--font-inter);
 }
 
 a {
-  font-family: var(--font-suisse-screen-regular);
+  font-family: var(--font-inter);
 }
 
 blockquote {
-  font-family: var(--font-suisse-screen-regular);
+  font-family: var(--font-inter);
   color: #374151;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 @layer components {
@@ -44,7 +51,7 @@ blockquote {
   }
 
   .hero-wrapper {
-    @apply flex h-full flex-col justify-end pb-8 md:pb-0 lg:justify-start lg:flex-row lg:items-center;
+    @apply flex h-full flex-col justify-center items-center;
   }
 
   .hero-content-wrapper {
