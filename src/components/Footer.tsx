@@ -8,19 +8,19 @@ export const Footer = (props: FooterProps) => {
     ...props,
   };
   return (
-    <footer className="px-[5%] py-12 md:py-18 lg:py-20">
+    <footer className="bg-[#131a24] px-[5%] py-12 md:py-18 lg:py-20">
       <div className="cvi-container">
         <div className="grid grid-cols-1 items-center justify-center justify-items-center gap-x-[4vw] gap-y-12 pb-12 md:pb-18 lg:grid-cols-[0.25fr_1fr_0.25fr] lg:justify-between lg:gap-y-4 lg:pb-20">
           <Link
             href="/"
-            className="text-2xl xl:text-[20px] lg:text-[14px] font-extrabold navbar-font lg:justify-self-start"
+            className="text-white text-2xl xl:text-[20px] lg:text-[14px] font-extrabold navbar-font lg:justify-self-start"
           >
             BERNARD WHIMP
           </Link>
           {columnLinks.map((column, index) => (
             <ul
               key={index}
-              className="grid grid-flow-row grid-cols-1 items-start justify-center justify-items-center gap-6 md:grid-flow-col md:grid-cols-[max-content] md:justify-center md:justify-items-start"
+              className="grid grid-flow-row grid-cols-1 items-start justify-center justify-items-center gap-6 text-white md:grid-flow-col md:grid-cols-[max-content] md:justify-center md:justify-items-start"
             >
               {column.links.map((link, linkIndex) => (
                 <li key={linkIndex} className="font-semibold group">
@@ -56,7 +56,7 @@ export const Footer = (props: FooterProps) => {
                 <a
                   key={index}
                   href={link.url}
-                  className="hover:text-gray-300"
+                  className=" text-white hover:text-gray-300"
                   aria-label={`Visit our ${ariaLabel} page`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -67,14 +67,14 @@ export const Footer = (props: FooterProps) => {
             })}
           </div>
         </div>
-        <div className="h-px w-full bg-black" />
+        <div className="h-px w-full bg-white" />
         <div className="flex flex-col-reverse items-center justify-center justify-items-center pb-4 pt-6 text-sm md:flex-row md:gap-x-6 md:pb-0 md:pt-8">
-          <p className="mt-8 md:mt-0">{footerText}</p>
+          <p className=" text-white mt-8 md:mt-0">{footerText}</p>
           <ul className="grid grid-flow-row grid-cols-[max-content] items-center justify-center justify-items-center gap-y-4 text-sm md:grid-flow-col md:gap-x-6 md:gap-y-0">
             {footerLinks.map((link, index) => (
               <li
                 key={index}
-                className="underline decoration-black underline-offset-1 "
+                className="text-white underline decoration-white underline-offset-1 hover:text-gray-300 hover:decoration-gray-300 "
               >
                 <a href={link.url}>{link.title}</a>
               </li>

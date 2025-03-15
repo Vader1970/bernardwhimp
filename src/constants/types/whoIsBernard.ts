@@ -63,7 +63,7 @@ export const WhoIsBernardDefaults: Props = {
   buttons: [
     {
       title: "Learn More About Bernard Whimp",
-      variant: "navbar",
+      variant: "gold",
       href: "/about",
     },
   ],

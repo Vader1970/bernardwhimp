@@ -25,15 +25,14 @@ export const ContactCta = (props: ContactCtaProps) => {
   };
 
   return (
-    <motion.section
-      ref={elementRef}
-      id="cta27"
-      className="relative px-[5%] py-16 md:py-24 lg:py-28"
-      initial={{ opacity: 0, translateY: 20 }}
-      animate={{ opacity: isVisible ? 1 : 0, translateY: isVisible ? 0 : 20 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="cvi-container max-w-lg text-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-16">
+    <section id="cta27" className="relative px-[5%] py-16 md:py-24 lg:py-28">
+      <motion.div
+        ref={elementRef}
+        initial={{ opacity: 0, translateY: 20 }}
+        animate={{ opacity: isVisible ? 1 : 0, translateY: isVisible ? 0 : 20 }}
+        transition={{ duration: 0.5 }}
+        className="cvi-container max-w-lg text-center bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg p-16"
+      >
         <h2 className="mb-5 text-white text-4xl font-bold leading-[1.2] md:mb-6 md:text-5xl lg:text-6xl">
           {heading}
         </h2>
@@ -49,7 +48,7 @@ export const ContactCta = (props: ContactCtaProps) => {
             </Button>
           ))}
         </div>
-      </div>
+      </motion.div>
       <div
         className="absolute w-full h-full inset-0 -z-10"
         style={{ aspectRatio: "2241 / 1338" }}
@@ -63,6 +62,6 @@ export const ContactCta = (props: ContactCtaProps) => {
         />
         <div className="absolute inset-0 bg-black/50" />
       </div>
-    </motion.section>
+    </section>
   );
 };

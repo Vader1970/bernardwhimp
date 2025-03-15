@@ -18,21 +18,24 @@ export const GodOfStocks = (props: GodOfStocksComponentProps) => {
   const { isVisible, elementRef } = useFadeInOnScroll();
 
   return (
-    <motion.section
-      ref={elementRef}
-      id="content7"
-      className="cvi-container pb-4"
-      initial={{ opacity: 0, translateY: 20 }}
-      animate={{ opacity: isVisible ? 1 : 0, translateY: isVisible ? 0 : 20 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div>
+    <section id="content7" className="w-screen bg-[#131a24]">
+      <div className="cvi-container pb-4">
         <div className="mx-auto w-full">
-          <h2 className="heading-2">{heading}</h2>
-          <div className="line"></div>
-          <div className="prose max-w-none">{children}</div>
+          <motion.div
+            ref={elementRef}
+            initial={{ opacity: 0, translateY: 20 }}
+            animate={{
+              opacity: isVisible ? 1 : 0,
+              translateY: isVisible ? 0 : 20,
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="heading-2 text-white">{heading}</h2>
+            <div className="line bg-white"></div>
+            <div className="prose max-w-none">{children}</div>
+          </motion.div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };

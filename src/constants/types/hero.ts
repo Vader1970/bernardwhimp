@@ -31,15 +31,6 @@ export const HeroDefaults: Record<string, Props> = {
       alt: "Bernard Whimp",
     },
   },
-  about: {
-    tagline: "About Us",
-    heading: "Our Story",
-    buttons: [{ title: "Learn more", variant: "white-bg" }],
-    image: {
-      src: "/images/hero.webp",
-      alt: "About Us",
-    },
-  },
   chanceVoight: {
     tagline: "Meet Chance Voight",
     heading: "CHANCE VOIGHT",
@@ -61,7 +52,9 @@ export const HeroDefaults: Record<string, Props> = {
   contact: {
     tagline: "Get in Touch",
     heading: "CONTACT US",
-    buttons: [{ title: "Send a Message", variant: "white-bg", href: "#contact-form" }],
+    buttons: [
+      { title: "Send a Message", variant: "white-bg", href: "#contact-form" },
+    ],
     image: {
       src: "/images/hero.webp",
       alt: "Contact Us",

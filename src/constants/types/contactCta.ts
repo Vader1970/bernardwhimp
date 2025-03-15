@@ -23,11 +23,11 @@ export const ContactCtaDefaults: Props = {
   heading: "Contact Bernard Today",
   description: "Join us in achieving your investment goals.",
   buttons: [
-    { title: "Learn more", variant: "white-bg", href: "/about" },
+    // { title: "Learn more", variant: "white-bg", href: "/about" },
     { title: "Get in touch", variant: "transparent-bg", href: "/contact" },
   ],
   image: {
-    src: "/images/board-table-cta.webp",
-    alt: "Board Table CTA",
+    src: "/images/city-skyline.webp",
+    alt: "City Skyline CTA",
   },
 };

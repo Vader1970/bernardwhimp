@@ -57,57 +57,59 @@ export const BernardQuotesTestimonial = (
 
   return (
     <>
-      <motion.section
-        ref={elementRef}
-        id="testimonial7"
-        className="cvi-container overflow-hidden"
-        initial={{ opacity: 0, translateY: 20 }}
-        animate={{ opacity: isVisible ? 1 : 0, translateY: isVisible ? 0 : 20 }}
-        transition={{ duration: 0.5 }}
-      >
-        <div>
-          {/* for all available options: https://www.embla-carousel.com/api/options/ */}
-          <Carousel
-            setApi={setApi}
-            opts={{
-              loop: true,
-              align: "start",
+      <section id="testimonial7" className="w-screen bg-[#f1f2f7]">
+        <div className="cvi-container overflow-hidden">
+          <motion.div
+            ref={elementRef}
+            initial={{ opacity: 0, translateY: 20 }}
+            animate={{
+              opacity: isVisible ? 1 : 0,
+              translateY: isVisible ? 0 : 20,
             }}
-            className="overflow-hidden"
+            transition={{ duration: 0.5 }}
           >
-            <div className="relative">
-              <CarouselContent className="ml-0 md:mx-3">
-                {testimonials.map((testimonial, index) => (
-                  <CarouselItem
+            <Carousel
+              setApi={setApi}
+              opts={{
+                loop: true,
+                align: "start",
+              }}
+              className="overflow-hidden"
+            >
+              <div className="relative">
+                <CarouselContent className="ml-0 md:mx-3">
+                  {testimonials.map((testimonial, index) => (
+                    <CarouselItem
+                      key={index}
+                      className="pl-0 md:basis-full md:px-16"
+                    >
+                      <TestimonialCard testimonial={testimonial} />
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="bg-black text-white mt-8 hidden md:flex md:size-14 hover:bg-transparent hover:text-black transition-all duration-300" />
+                <CarouselNext className="bg-black text-white mt-8 hidden md:flex md:size-14 hover:bg-transparent hover:text-black transition-all duration-300" />
+              </div>
+              <div className="mt-[30px] flex items-center justify-center md:mt-[46px]">
+                {testimonials.map((_, index) => (
+                  <button
                     key={index}
-                    className="pl-0 md:basis-full md:px-16"
-                  >
-                    <TestimonialCard testimonial={testimonial} />
-                  </CarouselItem>
+                    onClick={() => api?.scrollTo(index)}
+                    aria-label={`Go to testimonial ${index + 1}`}
+                    className={clsx(
+                      "relative mx-2 inline-block size-4 rounded-full",
+                      {
+                        "bg-black": current === index + 1,
+                        "bg-[#ADB5BD]": current !== index + 1,
+                      }
+                    )}
+                  />
                 ))}
-              </CarouselContent>
-              <CarouselPrevious className="bg-black text-white mt-8 hidden md:flex md:size-14 hover:bg-transparent hover:text-black transition-all duration-300" />
-              <CarouselNext className="bg-black text-white mt-8 hidden md:flex md:size-14 hover:bg-transparent hover:text-black transition-all duration-300" />
-            </div>
-            <div className="mt-[30px] flex items-center justify-center md:mt-[46px]">
-              {testimonials.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => api?.scrollTo(index)}
-                  aria-label={`Go to testimonial ${index + 1}`}
-                  className={clsx(
-                    "relative mx-2 inline-block size-4 rounded-full",
-                    {
-                      "bg-black": current === index + 1,
-                      "bg-[#ADB5BD]": current !== index + 1,
-                    }
-                  )}
-                />
-              ))}
-            </div>
-          </Carousel>
+              </div>
+            </Carousel>
+          </motion.div>
         </div>
-      </motion.section>
+      </section>
       <hr className="section-line" />
     </>
   );

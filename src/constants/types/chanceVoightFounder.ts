@@ -22,7 +22,7 @@ export const ChanceVoightFounderDefaults: ChanceVoightFounderProps = {
   buttons: [
     {
       title: "Learn More About Chance Voight",
-      variant: "navbar",
+      variant: "gold",
       href: "/chance-voight",
     },
   ],

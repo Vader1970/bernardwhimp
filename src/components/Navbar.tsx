@@ -8,6 +8,7 @@ import { useMediaQuery } from "@relume_io/relume-ui";
 import { AnimatePresence, motion } from "framer-motion";
 import { RxChevronDown } from "react-icons/rx";
 import { NavLink, Props, NavbarDefaults } from "../constants/types/navbar";
+import { cn } from "../lib/utils";
 
 // Define animation variants for the mobile menu button lines
 const topLineVariants = {
@@ -63,8 +64,19 @@ export const Navbar = (props: NavbarProps) => {
 
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const isMobile = useMediaQuery("(max-width: 991px)");
   const pathname = usePathname();
+
+  // Add scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Close mobile menu when pathname changes
   useEffect(() => {
@@ -76,10 +88,15 @@ export const Navbar = (props: NavbarProps) => {
   }, []);
 
   return (
-    <nav className='fixed flex w-full items-center border-b border-border-primary bg-background-primary lg:min-h-18 lg:px-[5%] z-50'>
+    <nav
+      className={cn(
+        "fixed flex w-full items-center border-b border-white/20 bg-background-primary lg:min-h-18 lg:px-[5%] z-50",
+        isScrolled ? "bg-white/40 backdrop-blur-md shadow-sm" : ""
+      )}
+    >
       <div className='mx-auto size-full lg:grid lg:grid-cols-[0.375fr_1fr_0.375fr] lg:items-center lg:justify-between lg:gap-4'>
         <div className='flex min-h-16 items-center justify-between px-[5%] md:min-h-18 lg:min-h-full lg:px-0'>
-          <Link href={logo.url || "/"} className='text-2xl xl:text-[24px] lg:text-[20px] font-extrabold navbar-font'>
+          <Link href={logo.url || "/"} className='text-navy-800 text-2xl xl:text-[24px] lg:text-[20px] font-extrabold'>
             BERNARD WHIMP
           </Link>
 
@@ -90,17 +107,17 @@ export const Navbar = (props: NavbarProps) => {
               aria-label='Toggle mobile menu'
             >
               <motion.span
-                className='my-[3px] h-0.5 w-6 bg-black'
+                className='my-[3px] h-0.5 w-6 bg-navy-800'
                 animate={isMobileMenuOpen ? ["open", "rotatePhase"] : "closed"}
                 variants={topLineVariants}
               />
               <motion.span
-                className='my-[3px] h-0.5 w-6 bg-black'
+                className='my-[3px] h-0.5 w-6 bg-navy-800'
                 animate={isMobileMenuOpen ? "open" : "closed"}
                 variants={middleLineVariants}
               />
               <motion.span
-                className='my-[3px] h-0.5 w-6 bg-black'
+                className='my-[3px] h-0.5 w-6 bg-navy-800'
                 animate={isMobileMenuOpen ? ["open", "rotatePhase"] : "closed"}
                 variants={bottomLineVariants}
               />
@@ -129,7 +146,7 @@ export const Navbar = (props: NavbarProps) => {
                 <div key={index} className='first:pt-4 lg:first:pt-0 group relative'>
                   <Link
                     href={navLink.url || "/"}
-                    className={`py-3 lg:py-0 text-md lg:px-4 lg:text-base relative overflow-hidden flex items-center justify-center ${
+                    className={`py-3 lg:py-0 text-md lg:px-4 lg:text-base relative overflow-hidden flex items-center justify-center text-navy-800 ${
                       isActive ? "underline underline-offset-4" : ""
                     }`}
                     onClick={() => isMobile && setIsMobileMenuOpen(false)}
@@ -234,7 +251,7 @@ const SubMenu = ({
               <Link
                 key={index}
                 href={subMenuLink.url}
-                className='block py-3 text-center lg:px-4 lg:py-2 lg:text-left'
+                className='block py-3 text-center text-navy-800 lg:px-4 lg:py-2 lg:text-left'
                 onClick={handleLinkClick}
               >
                 {subMenuLink.title}

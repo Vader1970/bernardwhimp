@@ -30,15 +30,17 @@ export const BernardDocumentary = (props: BernardDocumentaryProps) => {
 
   return (
     <>
-      <motion.div
-        ref={elementRef}
-        className="bg-[#ffffff]"
-        initial={{ opacity: 0, translateY: 20 }}
-        animate={{ opacity: isVisible ? 1 : 0, translateY: isVisible ? 0 : 20 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="w-screen bg-[#f1f2f7]">
         <section id="layout91" className="cvi-container">
-          <div>
+          <motion.div
+            ref={elementRef}
+            initial={{ opacity: 0, translateY: 20 }}
+            animate={{
+              opacity: isVisible ? 1 : 0,
+              translateY: isVisible ? 0 : 20,
+            }}
+            transition={{ duration: 0.5 }}
+          >
             <Dialog>
               <DialogTrigger asChild>
                 <button className="relative flex w-full items-center justify-center">
@@ -62,9 +64,9 @@ export const BernardDocumentary = (props: BernardDocumentaryProps) => {
                 <VideoIframe video={video} />
               </DialogContent>
             </Dialog>
-          </div>
+          </motion.div>
         </section>
-      </motion.div>
+      </div>
       <hr className="section-line" />
     </>
   );
