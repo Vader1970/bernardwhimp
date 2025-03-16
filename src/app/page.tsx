@@ -1,9 +1,10 @@
 import { Header30 } from "@/components/home/Header30";
+import { Layout298 } from "@/components/home/Layout298";
 // import { Hero } from "@/components/Hero";
 // import { HeroDefaults } from "@/constants/types/hero";
-import { GodOfStocks } from "@/components/GodOfStocks";
-import { WhoIsBernard } from "@/components/WhoIsBernard";
-import { BernardDocumentary } from "@/components/BernardDocumentary";
+// import { GodOfStocks } from "@/components/GodOfStocks";
+// import { WhoIsBernard } from "@/components/WhoIsBernard";
+// import { BernardDocumentary } from "@/components/BernardDocumentary";
 import { ChanceVoightFounder } from "@/components/ChanceVoightFounder";
 import { BernardQuotesTestimonial } from "@/components/BernardQuotesTestimonial";
 import { MoreAboutBernard } from "@/components/MoreAboutBernard";
@@ -13,10 +14,11 @@ export default function Home() {
   return (
     <>
       <Header30 />
+      <Layout298 />
       {/* <Hero {...HeroDefaults.home} /> */}
-      <GodOfStocks />
+      {/* <GodOfStocks />
       <WhoIsBernard />
-      <BernardDocumentary />
+      <BernardDocumentary /> */}
       <ChanceVoightFounder />
       <BernardQuotesTestimonial />
       <MoreAboutBernard />
