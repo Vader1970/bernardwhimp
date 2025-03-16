@@ -25,12 +25,12 @@ export const Header30 = (props: Header30Props) => {
   };
   return (
     <PageTransition>
-      <section id='relume' className='relative h-screen'>
+      <section id='Header30' className='relative h-screen'>
         <div className='absolute inset-0 z-0'>
-          <div className='absolute inset-0 bg-navy-50 z-[0]' />
+          <div className='absolute inset-0 bg-navy-100 z-[0]' />
           <Image
             src={image.src}
-            className='size-full object-cover opacity-10'
+            className='size-full object-cover opacity-20'
             alt={image.alt || "Background Image"}
             fill
             priority

@@ -90,7 +90,7 @@ export const Navbar = (props: NavbarProps) => {
   return (
     <nav
       className={cn(
-        "fixed flex w-full items-center border-b border-white/20 bg-background-primary lg:min-h-18 lg:px-[5%] z-50",
+        "fixed top-0 flex w-full items-center border-b border-navy-800/20 bg-background-primary lg:min-h-18 lg:px-[5%] z-50",
         isScrolled ? "bg-white/40 backdrop-blur-md shadow-sm" : ""
       )}
     >
@@ -146,9 +146,13 @@ export const Navbar = (props: NavbarProps) => {
                 <div key={index} className='first:pt-4 lg:first:pt-0 group relative'>
                   <Link
                     href={navLink.url || "/"}
-                    className={`py-3 lg:py-0 text-md lg:px-4 lg:text-base relative overflow-hidden flex items-center justify-center text-navy-800 ${
+                    className={cn(
+                      "py-3 relative overflow-hidden flex items-center justify-center text-navy-800",
+                      "lg:py-0 lg:px-4 lg:text-base",
+                      // Mobile styles
+                      "text-2xl font-semibold lg:text-base lg:font-normal",
                       isActive ? "underline underline-offset-4" : ""
-                    }`}
+                    )}
                     onClick={() => isMobile && setIsMobileMenuOpen(false)}
                   >
                     <span className='relative inline-flex overflow-hidden'>
