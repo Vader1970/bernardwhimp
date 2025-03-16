@@ -37,7 +37,7 @@ export const Layout298 = (props: Layout298Props) => {
             <div>
               <h2 className='mfont-serif text-4xl text-center md:text-6xl font-bold text-navy-900 mb-6'>{heading}</h2>
             </div>
-            <p className='text-navy-600 text-center text-md sm:text-lg mb-10 leading-relaxed'>{description}</p>
+            <p className='text-navy-600 text-center text-md sm:text-lg leading-relaxed'>{description}</p>
           </div>
           <div className='grid grid-cols-1 items-start gap-y-12 md:grid-cols-2 md:gap-x-8 md:gap-y-16 lg:grid-cols-4'>
             {sections.map((section, index) => {
